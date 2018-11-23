@@ -15,7 +15,9 @@ d = date.strftime("%d")
 #verify value is in expected format. E.q., 20181122
 #print(y+m+d)
 
-#create URL
+#create URL with today's date using the variables y m d
 url = ['https://quotes.hegnar.no/quotes/tradedump.php?date=' + y + m + d + '&paper=SPY.A&csv_format=csv']
-print (url)
+
+#verify value is as expected
+#print (url)
 
