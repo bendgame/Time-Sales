@@ -19,3 +19,8 @@ d = date.strftime("%d")
 url = ['https://quotes.hegnar.no/quotes/tradedump.php?date=' + y + m + d + '&paper=SPY.A&csv_format=csv']
 print (url)
 
+#open the page
+get_url = req.urlopen(url)
+
+#verify the page looks correct
+print(get_url.read())
