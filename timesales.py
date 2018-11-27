@@ -16,7 +16,7 @@ d = date.strftime("%d")
 #print(y+m+d)
 
 #create URL
-url = ['https://quotes.hegnar.no/quotes/tradedump.php?date=' + y + m + d + '&paper=SPY.A&csv_format=csv']
+url = 'https://quotes.hegnar.no/quotes/tradedump.php?date=' + y + m + d + '&paper=SPY.A&csv_format=csv'
 print (url)
 
 #open the page and close connection
