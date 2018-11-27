@@ -1,4 +1,5 @@
-#Script to download time and sales data from website https://quotes.hegnar.no/quotes/tradedump.php?date=20181121&paper=SPY.A&csv_format=csv
+#Script to download time and sales data from website https://quotes.hegnar.no/quotes/tradedump.php?
+#Example of spy https://quotes.hegnar.no/quotes/tradedump.php?date=20181121&paper=SPY.A&csv_format=csv
 #for SPY 
 #the script is designed to be run daily as it updates the date value in the URL to today's date. 
 
@@ -17,7 +18,7 @@ d = date.strftime("%d")
 
 #create URL
 url = 'https://quotes.hegnar.no/quotes/tradedump.php?date=' + y + m + d + '&paper=SPY.A&csv_format=csv'
-print (url)
+#print (url)
 
 #open the page and close connection
 get_url = req.urlopen(url)
@@ -25,5 +26,9 @@ http = get_url.read()
 get_url.close()
 
 #verify the page looks correct
-print(http)
+#print(http)
 
+#create a file named ts + yyyymmdd and download it as csv since it is already a csv file. 
+tnsfile = open('ts'+y+m+d+'.csv','wb')
+tnsfile.write(http)
+tnsfile.close()
